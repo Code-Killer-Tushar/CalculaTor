@@ -131,7 +131,7 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                if ( symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
+                                if (screen != "" &&  symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
                                     screen = screen + symbols[3] // ÷
                                 }
                             },
@@ -199,7 +199,7 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                if ( symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
+                                if (screen != "" &&  symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
                                     screen = screen + symbols[2] // x
                                 }
                             },
@@ -264,7 +264,7 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                if ( symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
+                                if (screen != "" &&  symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
                                     screen = screen + symbols[1] // -
                                 }
                             },
@@ -329,8 +329,8 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                if ( symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
-                                    screen = screen + symbols[3] // +
+                                if (screen != "" && symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
+                                    screen = screen + symbols[0] // +
                                 }
                             },
                             modifier = Modifier.size(90.dp),
