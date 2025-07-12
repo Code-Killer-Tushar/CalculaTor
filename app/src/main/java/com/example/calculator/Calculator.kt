@@ -31,6 +31,37 @@ import com.example.calculator.ui.theme.LightGray
 import com.example.calculator.ui.theme.Orange
 
 
+fun result(screen: String): Double{
+    var result = 0.0
+    val symbols = listOf("+", "-", "x", "÷")
+    val list = mutableListOf<Double>()
+    for (symbol in symbols) {
+        if (symbol in screen) {
+            val l = screen.split(symbol)
+            list.add(l[0].toDouble())
+            list.add(l[1].toDouble())
+        }
+    }
+
+    when {
+        "+" in screen -> {
+            result = list[0] + list[1]
+        }
+        "-" in screen -> {
+            result = list[0] - list[1]
+        }
+        "x" in screen -> {
+            result = result + list[0] * list[1]
+        }
+        "÷" in screen -> {
+            result = result + list[0] / list[1]
+        }
+    }
+
+    return result
+}
+
+
 @Composable
 fun Calculator() {
     var screen by remember {
@@ -106,6 +137,7 @@ fun Calculator() {
                                 color = Color.Black
                             )
                         }
+
 
                         Spacer(modifier = Modifier.padding(2.5.dp))
 
@@ -385,7 +417,8 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-
+                                val result = result(screen)
+                                screen = result.toString()
                             },
                             modifier = Modifier
                                 .weight(1f)
