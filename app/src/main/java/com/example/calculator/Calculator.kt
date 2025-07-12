@@ -131,10 +131,8 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                for (symbol in symbols) {
-                                    if (symbol !in screen) {
-                                        screen = screen + symbols[3] // ÷
-                                    }
+                                if ( symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
+                                    screen = screen + symbols[3] // ÷
                                 }
                             },
                             modifier = Modifier.size(90.dp),
@@ -201,10 +199,8 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                for (symbol in symbols) {
-                                    if (symbol !in screen) {
-                                        screen = screen + symbols[2] // x
-                                    }
+                                if ( symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
+                                    screen = screen + symbols[2] // x
                                 }
                             },
                             modifier = Modifier.size(90.dp),
@@ -268,10 +264,8 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                for (symbol in symbols) {
-                                    if (symbol !in screen) {
-                                        screen = screen + symbols[1] // -
-                                    }
+                                if ( symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
+                                    screen = screen + symbols[1] // -
                                 }
                             },
                             modifier = Modifier.size(90.dp),
@@ -335,10 +329,8 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                for (symbol in symbols) {
-                                    if (symbol !in screen) {
-                                        screen = screen + symbols[0] // +
-                                    }
+                                if ( symbols[0] !in screen && symbols[1] !in screen && symbols[2] !in screen && symbols[3] !in screen ) {
+                                    screen = screen + symbols[3] // +
                                 }
                             },
                             modifier = Modifier.size(90.dp),
