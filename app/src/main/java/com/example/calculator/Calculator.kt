@@ -37,8 +37,7 @@ fun Calculator() {
         mutableStateOf("")
     }
 
-    var num1 = 0
-    var num2 = 0
+    val symbols = listOf("+", "-", "x", "÷")
 
     Box(
         modifier = Modifier.fillMaxSize()
@@ -132,13 +131,17 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                screen = screen + "÷"
+                                for (symbol in symbols) {
+                                    if (symbol !in screen) {
+                                        screen = screen + symbols[3] // ÷
+                                    }
+                                }
                             },
                             modifier = Modifier.size(90.dp),
                             colors = ButtonDefaults.buttonColors(Orange)
                         ) {
                             Text(
-                                text = "÷",
+                                text = symbols[3],
                                 fontSize = 50.sp,
                                 color = Color.Black
                             )
@@ -198,13 +201,17 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                screen = screen + "x"
+                                for (symbol in symbols) {
+                                    if (symbol !in screen) {
+                                        screen = screen + symbols[2] // x
+                                    }
+                                }
                             },
                             modifier = Modifier.size(90.dp),
                             colors = ButtonDefaults.buttonColors(Orange)
                         ) {
                             Text(
-                                text = "x",
+                                text = symbols[2],
                                 fontSize = 50.sp,
                                 color = Color.Black
                             )
@@ -261,13 +268,17 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                screen = screen + "-"
+                                for (symbol in symbols) {
+                                    if (symbol !in screen) {
+                                        screen = screen + symbols[1] // -
+                                    }
+                                }
                             },
                             modifier = Modifier.size(90.dp),
                             colors = ButtonDefaults.buttonColors(Orange)
                         ) {
                             Text(
-                                text = "-",
+                                text = symbols[1],
                                 fontSize = 50.sp,
                                 color = Color.Black
                             )
@@ -324,13 +335,17 @@ fun Calculator() {
 
                         Button(
                             onClick = {
-                                screen = screen + "+"
+                                for (symbol in symbols) {
+                                    if (symbol !in screen) {
+                                        screen = screen + symbols[0] // +
+                                    }
+                                }
                             },
                             modifier = Modifier.size(90.dp),
                             colors = ButtonDefaults.buttonColors(Orange)
                         ) {
                             Text(
-                                text = "+",
+                                text = symbols[0],
                                 fontSize = 50.sp,
                                 color = Color.Black
                             )
@@ -344,13 +359,9 @@ fun Calculator() {
                     ) {
                         Button(
                             onClick = {
-                                var list: List<String> = mutableListOf<String>()
-                                if ("+" in screen || "-" in screen || "x" in  screen || "÷" in screen ) {
-                                    list = screen.split("+")
-                                    list = screen.split("-")
-                                    list = screen.split("x")
-                                    list = screen.split("÷")
-                                } else false
+                                // Working on! Decimal function in working progress...
+
+
                             },
                             modifier = Modifier.size(90.dp),
                             colors = ButtonDefaults.buttonColors(Color.DarkGray)
