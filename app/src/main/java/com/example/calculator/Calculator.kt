@@ -419,6 +419,9 @@ fun Calculator() {
                             onClick = {
                                 val result = result(screen)
                                 screen = result.toString()
+                                if ( screen.endsWith(".0")) {
+                                    screen = screen.dropLast(2)
+                                }
                             },
                             modifier = Modifier
                                 .weight(1f)
