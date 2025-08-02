@@ -37,11 +37,15 @@ fun result(screen: String): Double{
     val list = mutableListOf<Double>()
     for (symbol in symbols) {
         if (symbol in screen) {
-            val l = screen.split(symbol)
-            list.add(l[0].toDouble())
-            list.add(l[1].toDouble())
+            if (!(screen.endsWith(symbol))) {
+                val l = screen.split(symbol)
+                list.add(l[0].toDouble())
+                list.add(l[1].toDouble())
+            }
         }
+
     }
+
 
     when {
         "+" in screen -> {
